@@ -16,7 +16,7 @@ public class Pedido {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany
     private List<Item> itens = new ArrayList<>();
 
     @OneToOne
