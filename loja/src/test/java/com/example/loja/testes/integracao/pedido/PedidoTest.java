@@ -1,7 +1,7 @@
 package com.example.loja.testes.integracao.pedido;
 
-import com.example.loja.dao.PedidoDAO;
-import com.example.loja.entidades.Pedido;
+import com.example.loja.infraestrutura.spring.pedido.PedidoDAO;
+import com.example.loja.infraestrutura.spring.pedido.PedidoModel;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -26,7 +28,10 @@ public class PedidoTest {
 
     @Test
     public void insere1PedidoNoBancoDeDados() throws Exception {
-        Pedido pedido = new Pedido("257.877.630-09");
+        PedidoModel pedido = new PedidoModel();
+        pedido.setId(1L);
+        pedido.setCpf("123456789");
+        pedido.setDataDoPedido(new Date());
         pedidoDAO.save(pedido);
         Assert.assertEquals(1, pedidoDAO.findAll().size());
         deletarTodos();
@@ -34,9 +39,11 @@ public class PedidoTest {
 
     @Test
     public void insere2PedidosNoBancoDeDados() throws Exception {
-        Pedido pedido = new Pedido("257.877.630-09");
+        PedidoModel pedido = new PedidoModel();
+        pedido.setId(1L);
         pedidoDAO.save(pedido);
-        Pedido pedido2 = new Pedido("257.877.630-09");
+        PedidoModel pedido2 = new PedidoModel();
+        pedido2.setId(2L);
         pedidoDAO.save(pedido2);
         Assert.assertEquals(2, pedidoDAO.findAll().size());
         deletarTodos();
