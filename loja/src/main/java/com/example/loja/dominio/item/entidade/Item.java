@@ -22,6 +22,11 @@ public class Item implements ItemInterface {
     }
 
     @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
     public Produto getProduto() {
         return produto;
     }

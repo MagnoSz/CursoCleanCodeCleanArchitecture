@@ -27,7 +27,7 @@ public class PedidoTest {
     }
 
     @Test
-    public void insere1PedidoNoBancoDeDados() throws Exception {
+    public void insere1PedidoNoBancoDeDados() {
         PedidoModel pedido = new PedidoModel();
         pedido.setId(1L);
         pedido.setCpf("123456789");
@@ -38,7 +38,7 @@ public class PedidoTest {
     }
 
     @Test
-    public void insere2PedidosNoBancoDeDados() throws Exception {
+    public void insere2PedidosNoBancoDeDados() {
         PedidoModel pedido = new PedidoModel();
         pedido.setId(1L);
         pedidoDAO.save(pedido);

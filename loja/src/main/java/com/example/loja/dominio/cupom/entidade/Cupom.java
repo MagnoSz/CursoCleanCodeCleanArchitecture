@@ -17,7 +17,7 @@ public class Cupom implements CupomInterface {
         validar();
     }
 
-    private void validar() throws Exception {
+    private void validar() {
     }
 
     @Override
@@ -31,7 +31,22 @@ public class Cupom implements CupomInterface {
     }
 
     @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
     public Double getPorcentagem() {
         return porcentagem;
+    }
+
+    @Override
+    public String getCodigo() {
+        return codigo;
+    }
+
+    @Override
+    public Date getDataDeExpiracao() {
+        return dataDeExpiracao;
     }
 }

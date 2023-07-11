@@ -34,6 +34,16 @@ public class Pedido implements PedidoInterface {
         validar();
     }
 
+    public Pedido(Long id, List<Item> itens, Cupom cupomDeDesconto, String cpf, String codigo, Date dataDoPedido) throws Exception {
+        this.id = id;
+        this.itens = itens;
+        this.cupomDeDesconto = cupomDeDesconto;
+        this.cpf = cpf;
+        this.codigo = codigo;
+        this.dataDoPedido = dataDoPedido;
+        validar();
+    }
+
     public Pedido(Long id, List<Item> itens, Cupom cupomDeDesconto, String cpf, String codigo, Date dataDoPedido, Double total) throws Exception {
         this.id = id;
         this.itens = itens;
@@ -83,6 +93,21 @@ public class Pedido implements PedidoInterface {
     @Override
     public Date getDataDoPedido() {
         return dataDoPedido;
+    }
+
+    @Override
+    public Cupom getCupomDeDesconto() {
+        return cupomDeDesconto;
+    }
+
+    @Override
+    public List<Item> getItens() {
+        return itens;
+    }
+
+    @Override
+    public String getCpf() {
+        return cpf;
     }
 
     @Override

@@ -49,6 +49,21 @@ public class Produto implements ProdutoInterface {
     }
 
     @Override
+    public Double getAltura() {
+        return altura;
+    }
+
+    @Override
+    public Double getLargura() {
+        return largura;
+    }
+
+    @Override
+    public Double getComprimento() {
+        return comprimento;
+    }
+
+    @Override
     public String getDescricao() {
         return descricao;
     }

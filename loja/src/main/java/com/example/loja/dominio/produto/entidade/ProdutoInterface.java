@@ -5,5 +5,8 @@ public interface ProdutoInterface {
     Double getPreco();
     Double getVolume();
     Double getPeso();
+    Double getAltura();
+    Double getLargura();
+    Double getComprimento();
     String getDescricao();
 }
