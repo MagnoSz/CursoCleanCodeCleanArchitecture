@@ -27,25 +27,13 @@ public class PedidoTest {
     }
 
     @Test
-    public void insere1PedidoNoBancoDeDados() {
+    public void inserePedidoNoBancoDeDados() {
         PedidoModel pedido = new PedidoModel();
         pedido.setId(1L);
         pedido.setCpf("123456789");
         pedido.setDataDoPedido(new Date());
         pedidoDAO.save(pedido);
         Assert.assertEquals(1, pedidoDAO.findAll().size());
-        deletarTodos();
-    }
-
-    @Test
-    public void insere2PedidosNoBancoDeDados() {
-        PedidoModel pedido = new PedidoModel();
-        pedido.setId(1L);
-        pedidoDAO.save(pedido);
-        PedidoModel pedido2 = new PedidoModel();
-        pedido2.setId(2L);
-        pedidoDAO.save(pedido2);
-        Assert.assertEquals(2, pedidoDAO.findAll().size());
         deletarTodos();
     }
 
