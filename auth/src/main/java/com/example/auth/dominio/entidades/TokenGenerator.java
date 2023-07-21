@@ -7,11 +7,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
 
-public class Token {
+public class TokenGenerator {
 
-    private final String key;
+    private String key;
 
-    public Token(String key) {
+    public TokenGenerator(String key) {
         this.key = key;
     }
 
